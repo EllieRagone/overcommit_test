@@ -1,0 +1,130 @@
+# Use this file to configure the Overcommit hooks you wish to use. This will
+# extend the default configuration defined in:
+# https://github.com/brigade/overcommit/blob/master/config/default.yml
+#
+# At the topmost level of this YAML file is a key representing type of hook
+# being run (e.g. pre-commit, commit-msg, etc.). Within each type you can
+# customize each hook, such as whether to only run it on certain files (via
+# `include`), whether to only display output if it fails (via `quiet`), etc.
+#
+# For a complete list of hooks, see:
+# https://github.com/brigade/overcommit/tree/master/lib/overcommit/hook
+#
+# For a complete list of options that you can use to customize hooks, see:
+# https://github.com/brigade/overcommit#configuration
+#
+# Uncomment the following lines to make the configuration take effect.
+
+gemfile: Gemfile
+
+CommitMsg:
+  HardTabs:
+    enabled: true
+
+  RussianNovel:
+    enabled: true
+
+  SpellCheck:
+    enabled: true
+
+PostMerge:
+  BundleInstall:
+    enabled: true
+
+PreCommit:
+  BundleAudit:
+    enabled: true
+
+  BundleCheck:
+    enabled: true
+
+  BundleOutdated:
+    enabled: true
+
+  CaseConflicts:
+    enabled: true
+
+  CoffeeLint:
+    enabled: true
+
+  CssLint:
+    enabled: false
+
+  FixMe:
+    enabled: true
+    keywords: ["FIXME"]
+    exclude:
+      - .overcommit.yml
+
+  HamlLint:
+    enabled: true
+
+  HardTabs:
+    enabled: true
+
+  ImageOptim:
+    enabled: false
+
+  JsonSyntax:
+    enabled: true
+
+  LicenseHeader:
+    enabled: false
+
+  LineEndings:
+    enabled: true
+    eol: "\n"
+
+  LocalPathsInGemfile:
+    enabled: true
+
+  Mdl:
+    enabled: false
+
+  MergeConflicts:
+    enabled: true
+
+  RailsBestPractices:
+    enabled: true
+
+  RailsSchemaUpToDate:
+    enabled: true
+
+  Reek:
+    enabled: false
+    exclude:
+      - "config/*.rb"
+      - "custom_plan.rb"
+      - "db/migrate/20170821181444_devise_create_users.rb"
+
+  RuboCop:
+    enabled: false
+    on_warn: fail
+
+  RubyLint:
+    enabled: false
+
+  ScssLint:
+    enabled: true
+
+  ShellCheck:
+    enabled: true
+
+  TrailingWhitespace:
+    enabled: true
+    exclude:
+      - "**/db/structure.sql"
+
+  YamlSyntax:
+    enabled: true
+
+PrePush:
+  Brakeman:
+    enabled: true
+
+  RSpec:
+    enabled: true
+
+PostCheckout:
+  ALL:
+    quiet: true
