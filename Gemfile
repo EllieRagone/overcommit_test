@@ -17,6 +17,9 @@ group :development do
   gem 'ruby-lint', require: false
   gem 'scss_lint', require: false
 end
+group :development, :test do
+  gem 'rspec-rails'
+end
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.3'
